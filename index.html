@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <title>Mobile & Android Software Engineer | Portfolio</title>
+  <meta name="description"
+    content="Portofolio resmi Richard, Mobile Engineer spesialis Flutter & Dart. Menampilkan proyek IoT SmartSensor, Fintech, Telehealth, dan AI Motion.">
+  <meta name="keywords"
+    content="Flutter Developer, Dart, Mobile Engineer, Cross-Platform Android iOS, IoT, Clean Architecture, Portofolio Flutter">
+  <meta name="author" content="Richard">
+  <meta property="og:title" content="Richard | Flutter & Mobile Software Engineer Portfolio">
+  <meta property="og:description"
+    content="Flutter & Dart Mobile Developer Portfolio - Clean Architecture, IoT Telemetry, High-Performance Cross-Platform Apps.">
+  <meta property="og:type" content="website">
+
+  <!-- Avoid FOUC for Color Scheme Preference -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("color-scheme");
+      if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+        const meta = document.querySelector('meta[name="color-scheme"]');
+        if (meta) meta.content = savedTheme;
+      }
+    })();
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Diagonal Theme Swipe Overlay -->
+  <div id="theme-swipe-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Animated Background Canvas & Glow Orbs -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="aurora-blur-1" aria-hidden="true"></div>
+  <div class="aurora-blur-2" aria-hidden="true"></div>
+
+  <!-- Header & Navigation (Floating Glass Pill Island) -->
+  <header class="site-header" id="site-header">
+    <div class="floating-nav-pill">
+      <!-- Mobile Minimal Brand/Status (Shown on Mobile screens) -->
+      <a href="#hero" class="mobile-brand-pill" aria-label="Richard">
+        <span class="pulse-dot"></span>
+        <span class="brand-name">Richard<span class="gradient-text">.</span></span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-island-nav" aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link active" data-i18n="navHome">Beranda</a></li>
+          <li><a href="#skills" class="nav-link" data-i18n="navSkills">Keahlian</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="navProjects">Proyek</a></li>
+          <li><a href="#architecture" class="nav-link" data-i18n="navArchitecture">Arsitektur</a></li>
+          <li><a href="#experience" class="nav-link" data-i18n="navExperience">Pengalaman</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="navContact">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="pill-divider" aria-hidden="true"></div>
+
+      <div class="nav-actions">
+        <!-- Language Switcher (ID / EN) -->
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <button class="lang-btn active" data-lang="id" aria-label="Ganti Bahasa Indonesia">ID</button>
+          <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+        </div>
+
+        <!-- Theme Toggle (Dark / Light) -->
+        <button class="btn-icon theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="btn-icon hamburger-btn" id="hamburger-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge-available">
+              <span class="pulse-dot"></span>
+              <span data-i18n="heroBadge">Tersedia untuk Proyek & Kolaborasi</span>
+            </div>
+
+            <h1 class="hero-headline">
+              <span data-i18n="heroRolePre">Halo, saya Richard</span><br>
+              <span class="gradient-text" data-i18n="heroRolePost">Mobile & IoT Software Engineer</span>
+            </h1>
+
+            <p class="hero-desc" data-i18n="heroDesc">
+              Mobile Software Engineer di PT. Cakrawala Bima Instrument yang berdedikasi membangun aplikasi Flutter &
+              Dart berkinerja tinggi: protokol IoT (MQTT & WebSocket), Bluetooth Serial & BLE, presensi geofencing
+              akurat, serta arsitektur enterprise multi-modul.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary" id="hero-btn-projects">
+                <span data-i18n="heroCtaProjects">Lihat Karya Saya</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary" id="hero-btn-contact" data-i18n="heroCtaContact">
+                Hubungi Saya
+              </a>
+              <a href="assets/cv/CV_Richard_Mobile_IoT_Software_Engineer.pdf" download="CV_Richard_Mobile_IoT_Software_Engineer.pdf" class="btn btn-cv" id="hero-btn-cv" aria-label="Unduh CV Richard">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span data-i18n="heroCtaCv">Unduh CV</span>
+              </a>
+            </div>
+
+            <div class="hero-metrics">
+              <div class="metric-item">
+                <div class="metric-number" data-target="3" data-suffix="+">3<span>+</span></div>
+                <div class="metric-label" data-i18n="metric1Label">Tahun Pengalaman Mobile Dev</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-number" data-target="3" data-suffix="+">3<span>+</span></div>
+                <div class="metric-label" data-i18n="metric2Label">Aplikasi Terpublikasi di Play Store</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-number" data-target="99.8" data-suffix="%">99.8<span>%</span></div>
+                <div class="metric-label" data-i18n="metric3Label">Crash-Free Users Session Rate</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-avatar-card">
+              <!-- Floating Card 1: Flutter & Dart -->
+              <div class="float-card float-card-1">
+                <div class="badge-icon flutter" style="background: rgba(14, 165, 233, 0.12); border: 1px solid rgba(56, 189, 248, 0.35);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.314 0L2.3 12l3.686 3.686L21.684 0h-7.37z" fill="#38BDF8"/>
+                    <path d="M14.314 24h7.37L10.3 12.614l-3.7 3.7L14.314 24z" fill="#0284C7"/>
+                    <path d="M10.271 16.314l3.715 3.714 7.698-7.714h-7.371l-4.042 4z" fill="#0EA5E9"/>
+                    <path d="M14.286 24l-3.986-4 4-4 3.986 4-4 4z" fill="#0369A1"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="title">Flutter & Dart</div>
+                  <div class="subtitle">Cross-Platform UI</div>
+                </div>
+              </div>
+
+              <!-- Floating Card 2: 60 FPS Performance -->
+              <div class="float-card float-card-2">
+                <div class="badge-icon speed">⚡</div>
+                <div>
+                  <div class="title">60 FPS Fluid UI</div>
+                  <div class="subtitle">Zero Frame Drops</div>
+                </div>
+              </div>
+
+              <div class="avatar-wrapper">
+                <img src="assets/images/richard.jpg" alt="Richard - Mobile Software Engineer" fetchpriority="high">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Tech Stack Section -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header reveal reveal-pop">
+          <div class="section-tag" data-i18n="skillsTag">Keahlian Teknis</div>
+          <h2 class="section-title" data-i18n="skillsTitle">Tech Stack & Spesialisasi</h2>
+          <p class="section-subtitle" data-i18n="skillsSubtitle">Fokus pada performa tinggi, stabilitas, clean
+            architecture, dan UI/UX modern.</p>
+        </div>
+
+        <div class="skills-grid reveal-stagger">
+          <!-- Card 1 -->
+          <div class="skill-card">
+            <div class="skill-icon-box" style="background: rgba(2, 86, 155, 0.15); color: #02569B;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3 class="skill-card-title" data-i18n="skillCard1Title">Flutter & Dart Mobile Development</h3>
+            <p class="skill-card-desc" data-i18n="skillCard1Desc">Pengembangan aplikasi multi-platform modern
+              menggunakan Flutter & Dart, animasi 60fps, responsive layout, dan custom platform channels.</p>
+            <div class="skill-pill-list">
+              <span class="skill-pill">Flutter 3.x</span>
+              <span class="skill-pill">Dart</span>
+              <span class="skill-pill">CustomPainter</span>
+              <span class="skill-pill">AnimationController</span>
+              <span class="skill-pill">Platform Channels</span>
+              <span class="skill-pill">Responsive Layout</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="skill-card">
+            <div class="skill-icon-box" style="background: rgba(139, 92, 246, 0.12); color: var(--accent-purple);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="skill-card-title" data-i18n="skillCard2Title">IoT Telemetry & Protocols</h3>
+            <p class="skill-card-desc" data-i18n="skillCard2Desc">Integrasi protokol telemetri industri berkecepatan
+              tinggi: MQTT dengan server broker (lossless sync), WebSocket real-time, Bluetooth Serial, dan BLE.</p>
+            <div class="skill-pill-list">
+              <span class="skill-pill">MQTT & Broker</span>
+              <span class="skill-pill">WebSockets</span>
+              <span class="skill-pill">Bluetooth Serial</span>
+              <span class="skill-pill">Bluetooth LE (BLE)</span>
+              <span class="skill-pill">Zero Data Loss</span>
+              <span class="skill-pill">Lossless Streaming</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="skill-card">
+            <div class="skill-icon-box" style="background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+              </svg>
+            </div>
+            <h3 class="skill-card-title" data-i18n="skillCard3Title">Location, Security & Hardware Bridge</h3>
+            <p class="skill-card-desc" data-i18n="skillCard3Desc">Validasi geolocator & geofencing radius kantor,
+              integrasi live security camera stream, smartwatch bridge BLE, serta pembacaan sensor lingkungan.</p>
+            <div class="skill-pill-list">
+              <span class="skill-pill">Geolocator & Radius</span>
+              <span class="skill-pill">Geofencing</span>
+              <span class="skill-pill">Security Camera</span>
+              <span class="skill-pill">Smartwatch Bridge</span>
+              <span class="skill-pill">GloryFitPro</span>
+              <span class="skill-pill">BME280 Telemetry</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="skill-card">
+            <div class="skill-icon-box" style="background: rgba(245, 158, 11, 0.12); color: var(--accent-amber);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <h3 class="skill-card-title" data-i18n="skillCard4Title">Enterprise Systems & CI/CD</h3>
+            <p class="skill-card-desc" data-i18n="skillCard4Desc">Arsitektur modular skala enterprise (Menu Planning,
+              Purchasing, Production, Distribution), REST API Dio, SQLite/Hive DB, serta rilis Google Play Store.</p>
+            <div class="skill-pill-list">
+              <span class="skill-pill">Multi-Module SPPG</span>
+              <span class="skill-pill">REST API (Dio)</span>
+              <span class="skill-pill">Hive & SQLite</span>
+              <span class="skill-pill">Play Store Release</span>
+              <span class="skill-pill">Fastlane & CI/CD</span>
+              <span class="skill-pill">BLoC & Clean Arch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header reveal reveal-pop">
+          <div class="section-tag" data-i18n="projectsTag">Portofolio Unggulan</div>
+          <h2 class="section-title" data-i18n="projectsTitle">Karya Nyata & Sistem Produksi</h2>
+          <p class="section-subtitle" data-i18n="projectsSubtitle">Setiap aplikasi dibangun dan diuji langsung untuk
+            kebutuhan industri, sensor lingkungan, dan otomasi enterprise.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters reveal" role="group" aria-label="Project category filters">
+          <button class="filter-btn active" data-filter="all" data-i18n="filterAll">Semua Proyek</button>
+          <button class="filter-btn" data-filter="iot" data-i18n="filterIoT">IoT & Telemetry</button>
+          <button class="filter-btn" data-filter="enterprise" data-i18n="filterEnterprise">Enterprise & HR</button>
+          <button class="filter-btn" data-filter="wearable" data-i18n="filterWearable">Wearables & BLE</button>
+        </div>
+
+        <!-- Dynamic Projects Grid -->
+        <div class="projects-grid reveal-stagger" id="projects-container">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture & Code Quality Principles -->
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section-header reveal reveal-pop">
+          <div class="section-tag" data-i18n="archTag">Pendekatan Rekayasa</div>
+          <h2 class="section-title" data-i18n="archTitle">Arsitektur & Standar Kualitas Kode</h2>
+          <p class="section-subtitle" data-i18n="archSubtitle">Standar industri yang saya terapkan untuk memastikan
+            aplikasi cepat, mudah dites, dan siap skala jutaan pengguna.</p>
+        </div>
+
+        <div class="arch-grid reveal-stagger">
+          <!-- Pillar 1 -->
+          <div class="arch-card">
+            <div class="arch-header">
+              <span class="arch-num">01</span>
+              <h3 class="arch-title" data-i18n="arch1Title">Clean Architecture & BLoC/Riverpod</h3>
+            </div>
+            <p class="arch-desc" data-i18n="arch1Desc">Pemisahan lapisan Presentation, Domain, dan Data yang ketat
+              dengan Unidirectional Data Flow (UDF) untuk UI yang prediktif dan anti-bug.</p>
+            <ul class="arch-highlights">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="arch1Item1">State management reaktif terpusat dengan BLoC & Riverpod</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="arch1Item2">UseCases murni tanpa dependensi langsung ke framework UI</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="arch1Item3">Repository pattern dengan single source of truth (SSOT)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="arch-card">
+            <div class="arch-header">
+              <span class="arch-num">02</span>
+              <h3 class="arch-title" data-i18n="arch2Title">Performa & Battery Efficiency</h3>
+            </div>
+            <p class="arch-desc" data-i18n="arch2Desc">Penghematan daya perangkat melalui optimalisasi background
+              processing, lazy list rendering, dan alokasi memori yang ketat.</p>
+            <ul class="arch-highlights">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="arch2Item1">DevTools-driven memory leak detection & frame render inspection</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="arch2Item2">Tree-shaking, code splitting & optimasi aset ukuran APK/IPA</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="arch2Item3">Efficient local caching (Hive/Isar/SQLite) & offline-first sync</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="arch-card">
+            <div class="arch-header">
+              <span class="arch-num">03</span>
+              <h3 class="arch-title" data-i18n="arch3Title">Automated Testing & CI/CD</h3>
+            </div>
+            <p class="arch-desc" data-i18n="arch3Desc">Keandalan tinggi melalui pipeline otomatisasi pengujian, build
+              sign verification, dan deployment aman ke Play Store & App Store.</p>
+            <ul class="arch-highlights">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="arch3Item1">Unit testing untuk Domain & Business Logic (Mocktail, Test)</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="arch3Item2">Golden widget testing & Flutter integration UI tests</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span data-i18n="arch3Item3">Fastlane & GitHub Actions deployment pipeline</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header reveal reveal-pop">
+          <div class="section-tag" data-i18n="expTag">Perjalanan Karir</div>
+          <h2 class="section-title" data-i18n="expTitle">Pengalaman & Riwayat Kerja</h2>
+          <p class="section-subtitle" data-i18n="expSubtitle">Rekam jejak rekayasa mobile & IoT di PT. Cakrawala Bima
+            Instrument (2024 - Sekarang).</p>
+        </div>
+
+        <div class="timeline reveal-stagger">
+          <!-- Item 1: SmartShelter (2026) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp1Date">Pertengahan 2026 - Sekarang</div>
+              <h3 class="timeline-role" data-i18n="exp1Role">Lead Mobile IoT Engineer</h3>
+              <div class="timeline-company" data-i18n="exp1Company">PT. Cakrawala Bima Instrument</div>
+              <p class="timeline-desc" data-i18n="exp1Desc">Mengembangkan aplikasi SmartShelter yang berkomunikasi
+                dengan kontroller dan sensor industri via protokol MQTT dengan broker terpusat di server untuk menjamin
+                zero data loss (tanpa data terlewat/terloncat) serta endpoint URL yang dapat diakses secara publik.</p>
+            </div>
+          </div>
+
+          <!-- Item 2: IPAL & HVAS BLE (2026) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp2Date">Awal - Pertengahan 2026</div>
+              <h3 class="timeline-role" data-i18n="exp2Role">Mobile IoT Engineer</h3>
+              <div class="timeline-company" data-i18n="exp2Company">PT. Cakrawala Bima Instrument</div>
+              <p class="timeline-desc" data-i18n="exp2Desc">Membangun sistem IoT monitoring IPAL berbasis komunikasi
+                WebSocket dengan integrasi camera security, linechart visual 24 data historis ke belakang, download
+                export data, dan alarm min/max threshold. Berkolaborasi dengan tim hardware & firmware memodernisasi
+                komunikasi aplikasi HVAS ke BLE.</p>
+            </div>
+          </div>
+
+          <!-- Item 3: SPPG Terpadu (2025 - 2026) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp3Date">Akhir 2025 - Awal 2026</div>
+              <h3 class="timeline-role" data-i18n="exp3Role">Frontend Mobile Engineer</h3>
+              <div class="timeline-company" data-i18n="exp3Company">PT. Cakrawala Bima Instrument</div>
+              <p class="timeline-desc" data-i18n="exp3Desc">Merancang dan membangun frontend kompleks dari sistem SPPG
+                terpadu yang mengintegrasikan 4 modul operasional dalam 1 aplikasi: Menu Planning (Ahli Gizi),
+                Accounting (Purchasing), Production (Produksi), dan Distribution (Logistik).</p>
+            </div>
+          </div>
+
+          <!-- Item 4: CAIS & Smartwatch BLE (2025) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp4Date">Awal - Pertengahan 2025</div>
+              <h3 class="timeline-role" data-i18n="exp4Role">Mobile Application Developer</h3>
+              <div class="timeline-company" data-i18n="exp4Company">PT. Cakrawala Bima Instrument</div>
+              <p class="timeline-desc" data-i18n="exp4Desc">Merilis aplikasi presensi CAIS ke Google Play Store berbasis
+                REST API dengan fitur geolocator & geofencing radius akurat, rekap absensi, cuti, dan WFH. Mengembangkan
+                aplikasi smartwatch via BLE yang terintegrasi sebagai bridge system dengan ekosistem GloryFitPro di Play
+                Store.</p>
+            </div>
+          </div>
+
+          <!-- Item 5: HVAS Bluetooth Serial (2024) -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp5Date">Awal 2024 - Akhir 2024</div>
+              <h3 class="timeline-role" data-i18n="exp5Role">Mobile Developer (Flutter & IoT)</h3>
+              <div class="timeline-company" data-i18n="exp5Company">PT. Cakrawala Bima Instrument</div>
+              <p class="timeline-desc" data-i18n="exp5Desc">Mengawali karir di PT. Cakrawala Bima Instrument dengan
+                mengembangkan aplikasi telemetri lingkungan HVAS (High Volume Air Sampler) berbasis Bluetooth Serial
+                untuk sampling kualitas udara yang sukses dipublikasikan di Google Play Store.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Collaboration Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header reveal reveal-pop">
+          <div class="section-tag" data-i18n="contactTag">Hubungi Saya</div>
+          <h2 class="section-title" data-i18n="contactTitle">Mari Berkolaborasi</h2>
+          <p class="section-subtitle" data-i18n="contactSubtitle">Apakah Anda memiliki proyek baru, butuh konsultasi
+            teknis mobile, atau ingin merekrut? Jangan ragu mengirim pesan.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Direct Info Card -->
+          <div class="contact-info-card reveal reveal-slide-left">
+            <h3 data-i18n="contactInfoHeading">Informasi Kontak</h3>
+            <p data-i18n="contactInfoDesc">Saya terbuka untuk posisi full-time, freelance, maupun konsultasi arsitektur
+              mobile Android & Flutter.</p>
+
+            <div class="contact-direct-items">
+              <div class="direct-item">
+                <div class="direct-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="direct-content">
+                  <div class="label" data-i18n="contactLabelEmail">Email</div>
+                  <div class="val">richardkumbang04@gmail.com</div>
+                </div>
+                <button class="copy-btn" data-copy="richardkumbang04@gmail.com" data-i18n="btnCopy">Salin</button>
+              </div>
+
+              <div class="direct-item">
+                <div class="direct-icon" style="color: var(--accent-emerald);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="direct-content">
+                  <div class="label" data-i18n="contactLabelLocation">Lokasi</div>
+                  <div class="val" data-i18n="contactLabelLocationVal">Indonesia (WIB / GMT+7)</div>
+                </div>
+              </div>
+
+              <div class="direct-item">
+                <div class="direct-icon" style="color: var(--accent-purple);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 14 14"></polyline>
+                  </svg>
+                </div>
+                <div class="direct-content">
+                  <div class="label" data-i18n="contactLabelAvailability">Status Kerja</div>
+                  <div class="val" data-i18n="contactLabelAvailabilityVal">Tersedia untuk Peluang Baru</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Form -->
+          <div class="contact-form-card reveal reveal-slide-right">
+            <form id="contact-form" action="https://formsubmit.co/richardkumbang04@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+
+              <div class="form-group">
+                <label for="form-name" class="form-label" data-i18n="formNameLabel">Nama Lengkap</label>
+                <input type="text" id="form-name" name="name" class="form-input" required
+                  placeholder="Masukkan nama Anda" data-i18n-placeholder="formNamePlaceholder">
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label" data-i18n="formEmailLabel">Alamat Email</label>
+                <input type="email" id="form-email" name="email" class="form-input" required
+                  placeholder="nama@example.com" data-i18n-placeholder="formEmailPlaceholder">
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label" data-i18n="formSubjectLabel">Topik Pembahasan</label>
+                <input type="text" id="form-subject" name="subject" class="form-input" required
+                  placeholder="Misal: Proyek Aplikasi Android / Konsultasi IoT"
+                  data-i18n-placeholder="formSubjectPlaceholder">
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label" data-i18n="formMessageLabel">Pesan Anda</label>
+                <textarea id="form-message" name="message" class="form-textarea" required
+                  placeholder="Ceritakan rencana proyek atau kebutuhan Anda di sini..."
+                  data-i18n-placeholder="formMessagePlaceholder"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span data-i18n="formSubmitBtn">Kirim Pesan</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#hero" class="brand-logo" aria-label="Richard Portfolio">
+          <span class="logo-badge">R</span>
+          <span>My<span class="gradient-text">Porto</span></span>
+        </a>
+
+        <div class="footer-socials">
+          <a href="https://github.com/richardHenry11" target="_blank" rel="noopener noreferrer" class="social-link"
+            aria-label="GitHub Profile">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+              </path>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/cokiandthebastard" target="_blank" rel="noopener noreferrer"
+            class="social-link" aria-label="LinkedIn Profile">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="mailto:richardkumbang04@gmail.com" class="social-link" aria-label="Send Direct Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Richard. <span data-i18n="footerRights">Hak Cipta Dilindungi Undang-Undang. Dibuat dengan
+            cinta untuk performa mobile optimal.</span></div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan);">Flutter • Dart •
+          BLoC • Clean Arch</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Details Modal Dialog -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Tutup Dialog Modal">&times;</button>
+      <div class="modal-media-banner">
+        <img id="modal-banner-img" src="" alt="Project Showcase Banner">
+      </div>
+      <div class="modal-body">
+        <div class="modal-category" id="modal-category">Android Native</div>
+        <h3 class="modal-title" id="modal-title">Project Name</h3>
+        <p class="modal-desc" id="modal-desc" style="color: var(--text-secondary); line-height: 1.65;"></p>
+
+        <h4 class="modal-section-title" data-i18n="modalKeyFeatures">Fitur Utama & Tantangan Teknis:</h4>
+        <ul class="modal-feature-list" id="modal-features">
+          <!-- Populated dynamically -->
+        </ul>
+
+        <h4 class="modal-section-title" data-i18n="modalTechStack">Teknologi yang Digunakan:</h4>
+        <div class="modal-tags" id="modal-tags">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
