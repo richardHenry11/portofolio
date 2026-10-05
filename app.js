@@ -327,7 +327,7 @@ const projectsData = [
         "Interactive control panel for multi-node industrial shelters with live state indicators."
       ]
     },
-    github: "https://github.com/richardHenry11/portofolio",
+    github: "https://github.com/richardHenry11/smartshelterfe/tree/mainfe",
     demo: "#"
   },
   {
@@ -369,7 +369,7 @@ const projectsData = [
         "On-demand data download/export according to user date range, complete with min/max safety threshold alarms."
       ]
     },
-    github: "https://github.com/richardHenry11/portofolio",
+    github: "https://github.com/richardHenry11/IPAL",
     demo: "#"
   },
   {
@@ -411,7 +411,7 @@ const projectsData = [
         "Upgraded communication pipeline from Bluetooth Classic Serial (2024) to BLE (2026) for optimal battery runtime."
       ]
     },
-    github: "https://github.com/richardHenry11/portofolio",
+    github: "https://github.com/richardHenry11/kasih-HVAS/tree/ble_comm_setup",
     demo: "#"
   },
   {
@@ -453,7 +453,7 @@ const projectsData = [
         "Daily activity logs, leave allowance approvals, detailed check-in/out records, and material receipt logging."
       ]
     },
-    github: "https://github.com/richardHenry11/portofolio",
+    github: "https://github.com/richardHenry11/CaisCbinstrument",
     demo: "#"
   },
   {
