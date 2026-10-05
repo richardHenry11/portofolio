@@ -1640,6 +1640,56 @@ button {
   margin-top: 1rem;
 }
 
+/* Engineering Case Study Grid */
+.modal-casestudy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .modal-casestudy-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  transition: all var(--transition-fast);
+}
+
+.case-card:hover {
+  border-color: var(--border-glass-active);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.case-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.45rem;
+}
+
+.case-card.problem .case-card-header { color: #f43f5e; }
+.case-card.solution .case-card-header { color: var(--accent-cyan); }
+.case-card.architecture .case-card-header { color: var(--accent-purple); }
+.case-card.result .case-card-header { color: var(--accent-emerald); }
+
+.case-card-body {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
 /* Toast Notification */
 .toast-container {
   position: fixed;

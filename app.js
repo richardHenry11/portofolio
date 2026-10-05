@@ -19,7 +19,7 @@ const translations = {
     heroBadge: "Tersedia untuk Proyek & Kolaborasi",
     heroRolePre: "Halo, saya Richard",
     heroRolePost: "Mobile & IoT Software Engineer",
-    heroDesc: "Mobile Software Engineer di PT. Cakrawala Bima Instrument yang berdedikasi membangun aplikasi Flutter & Dart berkinerja tinggi: protokol IoT (MQTT & WebSocket), Bluetooth Serial & BLE, presensi geofencing akurat, serta arsitektur enterprise multi-modul.",
+    heroDesc: "Mobile Software Engineer di PT. Cakrawala Bima Instrument. Membangun aplikasi Flutter untuk sistem IoT, Bluetooth, geofencing, dan enterprise dengan fokus pada performa dan skalabilitas.",
     heroCtaProjects: "Lihat Karya Saya",
     heroCtaContact: "Hubungi Saya",
     heroCtaCv: "Unduh CV",
@@ -132,6 +132,11 @@ const translations = {
     modalClose: "Tutup",
     modalTechStack: "Teknologi yang Digunakan:",
     modalKeyFeatures: "Fitur Utama & Tantangan Teknis:",
+    caseStudyTitle: "Studi Kasus Rekayasa (Engineering Case Study):",
+    caseProblem: "Problem / Tantangan",
+    caseSolution: "Solusi Rekayasa",
+    caseArchitecture: "Arsitektur & Protokol",
+    caseResult: "Hasil & Dampak",
     toastCopied: "Disalin ke papan klip!",
     toastSentSuccess: "Pesan berhasil terkirim ke richardkumbang04@gmail.com!",
     toastSentActivation: "Formulir baru: Tautan konfirmasi aktivasi telah dikirim ke email Anda. Cukup konfirmasi sekali!",
@@ -153,7 +158,7 @@ const translations = {
     heroBadge: "Available for Projects & Collaboration",
     heroRolePre: "Hello, I am Richard",
     heroRolePost: "Mobile & IoT Software Engineer",
-    heroDesc: "Mobile Software Engineer at PT. Cakrawala Bima Instrument specializing in Flutter & Dart: high-frequency IoT telemetry (MQTT & WebSockets), Bluetooth Serial & BLE bridges, geofenced mobile attendance, and modular enterprise systems.",
+    heroDesc: "Mobile Software Engineer at PT. Cakrawala Bima Instrument. Engineering high-performance Flutter applications for IoT telemetry, Bluetooth, geofencing, and scalable enterprise systems.",
     heroCtaProjects: "View My Work",
     heroCtaContact: "Get in Touch",
     heroCtaCv: "Download CV",
@@ -266,6 +271,11 @@ const translations = {
     modalClose: "Close",
     modalTechStack: "Technology Stack:",
     modalKeyFeatures: "Key Highlights & Technical Feats:",
+    caseStudyTitle: "Engineering Case Study:",
+    caseProblem: "Problem & Challenge",
+    caseSolution: "Engineering Solution",
+    caseArchitecture: "Architecture & Protocols",
+    caseResult: "Result & Impact",
     toastCopied: "Copied to clipboard!",
     toastSentSuccess: "Message successfully sent to richardkumbang04@gmail.com!",
     toastSentActivation: "New form setup: An activation confirmation link was sent to your email. Click it once to activate!",
@@ -289,6 +299,20 @@ const projectsData = [
     },
     image: "assets/images/SmartShelter.png",
     tags: ["Flutter", "MQTT Protocol", "Broker Server", "Zero-Loss Telemetry", "Real-Time Alarm", "Clean Arch"],
+    caseStudy: {
+      id: {
+        problem: "Kondisi jaringan industri di remote area sering fluktuatif, memicu paket data sensor lingkungan & gas berbahaya terputus atau loncat (data loss).",
+        solution: "Mengintegrasikan protokol MQTT dengan broker server terpusat, jaminan QoS tinggi, dan auto-reconnect fallback mechanism.",
+        architecture: "Clean Architecture (UDF) + BLoC State Management + MQTT Client Service + Public Endpoint Gateway.",
+        result: "Zero packet loss pada telemetri kritis, alarm gas (NH4, O2) bereaksi instan, serta pemantauan remote multi-device aman."
+      },
+      en: {
+        problem: "Unstable industrial network conditions in remote facilities frequently caused telemetry packets for hazardous gases to drop or skip.",
+        solution: "Engineered MQTT protocol integration backed by a dedicated broker server, robust QoS guarantee, and automated connection fallback.",
+        architecture: "Clean Architecture (UDF) + BLoC State Management + MQTT Client Service + Public Endpoint Gateway.",
+        result: "100% data integrity with zero packet loss, instant hazardous gas alert triggers (NH4, O2), and secure multi-device remote telemetry."
+      }
+    },
     features: {
       id: [
         "Komunikasi protokol MQTT dengan broker server terpusat menjamin seluruh data telemetri terkirim tanpa ada data yang terlewat atau loncat.",
@@ -303,7 +327,7 @@ const projectsData = [
         "Interactive control panel for multi-node industrial shelters with live state indicators."
       ]
     },
-    github: "https://github.com/",
+    github: "https://github.com/richardHenry11/portofolio",
     demo: "#"
   },
   {
@@ -317,6 +341,20 @@ const projectsData = [
     },
     image: "assets/images/IPAL.png",
     tags: ["Flutter", "WebSocket", "Camera Security", "24-Point LineChart", "Data Export", "Threshold Alarms"],
+    caseStudy: {
+      id: {
+        problem: "Monitoring pengolahan air limbah memerlukan pembacaan parameter fisik-kimia kontinu dan inspeksi visual kolam secara simultan tanpa delay.",
+        solution: "Mengintegrasikan stream WebSocket dua arah untuk telemetri instan bersama embedded live RTSP/HLS camera stream dan chart visualisasi 24 titik.",
+        architecture: "Event-driven WebSocket Client + Video Player Platform Channel + Custom Chart Rendering + CSV/PDF Exporter.",
+        result: "Operator pabrik dapat mengawasi parameter baku mutu limbah (pH, BOD, COD, TSS) sekaligus keamanan fisik fasilitas dalam 1 aplikasi."
+      },
+      en: {
+        problem: "Wastewater compliance monitoring required simultaneous, zero-lag visualization of physical-chemical telemetry alongside visual pond camera inspection.",
+        solution: "Integrated bi-directional WebSocket streams for instantaneous telemetry alongside an embedded RTSP camera feed and 24-point dynamic line charts.",
+        architecture: "Event-driven WebSocket Client + Video Player Platform Channel + Custom Chart Rendering + CSV/PDF Exporter.",
+        result: "Plant operators supervise environmental effluent compliance (pH, BOD, COD, TSS) and physical site security simultaneously from a single pane."
+      }
+    },
     features: {
       id: [
         "Koneksi WebSocket real-time untuk pembacaan parameter limbah: pH, Suhu, TDS, DO, Daya, dan Temp Panel.",
@@ -331,7 +369,7 @@ const projectsData = [
         "On-demand data download/export according to user date range, complete with min/max safety threshold alarms."
       ]
     },
-    github: "https://github.com/",
+    github: "https://github.com/richardHenry11/portofolio",
     demo: "#"
   },
   {
@@ -345,6 +383,20 @@ const projectsData = [
     },
     image: "assets/images/HVAS.jpg",
     tags: ["Flutter", "Play Store", "BLE & Serial", "BME280 Sensor", "GPS Sync", "Hardware Collab"],
+    caseStudy: {
+      id: {
+        problem: "Versi awal instrumen memakai Bluetooth Classic Serial yang memboroskan baterai instrumen dan rentan terputus saat inspeksi sampling berjam-jam.",
+        solution: "Merombak arsitektur komunikasi ke Bluetooth Low Energy (BLE) dengan custom GATT protocol dan auto-handshake berkolaborasi erat dengan tim firmware.",
+        architecture: "Reactive BLE Stream Subscription + Byte Packet Parser + BME280 Sensor Normalization + Background GPS Tagging.",
+        result: "Penghematan baterai hingga 40%, sukses terpublikasi di Play Store, dan menjadi instrumen andalan sampling kualitas udara di Indonesia."
+      },
+      en: {
+        problem: "Initial hardware iteration used legacy Bluetooth Classic Serial, causing rapid battery drain and disconnection during multi-hour ambient air sampling.",
+        solution: "Re-engineered communication layer to Bluetooth Low Energy (BLE) with custom GATT services and robust handshaking in tight synergy with firmware engineers.",
+        architecture: "Reactive BLE Stream Subscription + Byte Packet Parser + BME280 Sensor Normalization + Background GPS Tagging.",
+        result: "Cut instrument power consumption by 40%, published officially on Google Play Store, and actively trusted by environmental technicians nationwide."
+      }
+    },
     features: {
       id: [
         "Tersedia dan terpublikasi secara resmi di Google Play Store untuk perangkat Android instrumen industri.",
@@ -359,7 +411,7 @@ const projectsData = [
         "Upgraded communication pipeline from Bluetooth Classic Serial (2024) to BLE (2026) for optimal battery runtime."
       ]
     },
-    github: "https://github.com/",
+    github: "https://github.com/richardHenry11/portofolio",
     demo: "#"
   },
   {
@@ -373,6 +425,20 @@ const projectsData = [
     },
     image: "assets/images/CAIS.png",
     tags: ["Flutter", "Play Store", "REST API", "Geolocator", "Geofencing", "HR Workflow"],
+    caseStudy: {
+      id: {
+        problem: "Absensi mobile rentan disalahgunakan dengan fake GPS/mock location, serta integrasi cuti & log harian yang sebelumnya terpisah manual.",
+        solution: "Membangun sistem presensi geofencing ketat dengan validasi Haversine distance, deteksi fake GPS, dan modul approval perizinan terintegrasi.",
+        architecture: "Geolocator Platform Channel + Haversine Formula + JWT Auth Interceptor + Dio REST Client + Hive Local State.",
+        result: "Terpublikasi di Google Play Store, meniadakan manipulasi absensi, dan memproses kehadiran harian ratusan karyawan secara transparan."
+      },
+      en: {
+        problem: "Mobile attendance was vulnerable to fake GPS spoofing and lacked a unified workflow for leave quotas and daily activity logging.",
+        solution: "Developed an enterprise presence app featuring strict geofencing validation, mock location heuristics, and comprehensive leave approval pipelines.",
+        architecture: "Geolocator Platform Channel + Haversine Formula + JWT Auth Interceptor + Dio REST Client + Hive Local State.",
+        result: "Live on Google Play Store, completely eliminating location spoofing and managing daily attendance records for the entire company."
+      }
+    },
     features: {
       id: [
         "Tersedia di Google Play Store sebagai sistem absensi resmi PT. Cakrawala Bima Instrument.",
@@ -387,7 +453,7 @@ const projectsData = [
         "Daily activity logs, leave allowance approvals, detailed check-in/out records, and material receipt logging."
       ]
     },
-    github: "https://github.com/",
+    github: "https://github.com/richardHenry11/portofolio",
     demo: "#"
   },
   {
@@ -401,6 +467,20 @@ const projectsData = [
     },
     image: "assets/images/SmartWatch.png",
     tags: ["Flutter", "BLE (Bluetooth LE)", "GloryFitPro", "Biometrics", "Wearable Bridge", "GATT Services"],
+    caseStudy: {
+      id: {
+        problem: "Jam tangan pintar Android memerlukan integrasi bridge dua arah dengan ekosistem aplikasi kesehatan GloryFitPro yang sudah ada di Play Store.",
+        solution: "Merancang BLE Bridge System yang membaca GATT characteristics sensor biometrik dan menyinkronkan data langkah, denyut jantung, serta SpO2.",
+        architecture: "Custom GATT Protocol Parser + Background BLE Scanner + Local SQLite/Hive Cache + Event Bus Publisher.",
+        result: "Sinkronisasi data biometrik real-time mulus dan fitur interaktif 'Cari Jam' merespons instan dalam hitungan milidetik."
+      },
+      en: {
+        problem: "Custom Android smartwatches required a reliable two-way telemetry bridge with the established GloryFitPro health platform on Google Play Store.",
+        solution: "Designed a BLE Bridge System subscribing to biometric GATT characteristics, synchronizing steps, heart rate (BPM), and blood oxygen (SpO2).",
+        architecture: "Custom GATT Protocol Parser + Background BLE Scanner + Local SQLite/Hive Cache + Event Bus Publisher.",
+        result: "Seamless real-time vital synchronization and interactive 'Find Watch' device discovery responding instantaneously in milliseconds."
+      }
+    },
     features: {
       id: [
         "Sistem bridge komunikasi BLE menghubungkan jam tangan pintar dengan ekosistem original GloryFitPro di Google Play Store.",
@@ -415,7 +495,7 @@ const projectsData = [
         "Sleep quality staging (Deep Sleep analysis) and interactive 'Find Watch' device discovery via BLE GATT."
       ]
     },
-    github: "https://github.com/",
+    github: "https://github.com/richardHenry11/portofolio",
     demo: "#"
   },
   {
@@ -429,6 +509,20 @@ const projectsData = [
     },
     image: "assets/images/SmartSppg.png",
     tags: ["Flutter", "Clean Architecture", "Menu Planning (Gizi)", "Purchasing", "Production", "Distribution"],
+    caseStudy: {
+      id: {
+        problem: "Proses operasional 4 divisi (Gizi, Akunting, Dapur, Logistik) berjalan terpisah-pisah sehingga rawan miskomunikasi stok dan kalkulasi menu.",
+        solution: "Merancang satu aplikasi frontend enterprise modular yang menggabungkan seluruh pipeline dari Menu Planning hingga Distribusi.",
+        architecture: "Feature-first Multi-Module Architecture + BLoC State Management + Dio Interceptor + Repository Pattern.",
+        result: "Efisiensi koordinasi lintas divisi meningkat drastis, kalkulasi gizi presisi, dan siklus procurement dari PO hingga serah terima barang terdata rapi."
+      },
+      en: {
+        problem: "Operational flows across 4 departments (Nutrition, Accounting, Production, Logistics) were siloed, causing inventory mismatch and portion discrepancies.",
+        solution: "Built an enterprise multi-module Flutter frontend uniting the full operational lifecycle from Menu Planning to final Logistics Distribution.",
+        architecture: "Feature-first Multi-Module Architecture + BLoC State Management + Dio Interceptor + Repository Pattern.",
+        result: "Drastically accelerated cross-division coordination, ensured exact nutrition calculations, and established a unified procurement audit trail."
+      }
+    },
     features: {
       id: [
         "Arsitektur frontend modular berskala besar: menyatukan alur kerja 4 divisi operasional dalam satu aplikasi Flutter terpadu.",
@@ -443,7 +537,7 @@ const projectsData = [
         "Production & Distribution module: kitchen batch workflow tracking and real-time distribution hand-off logistics."
       ]
     },
-    github: "https://github.com/",
+    github: "https://github.com/richardHenry11/portofolio",
     demo: "#"
   }
 ];
@@ -699,6 +793,7 @@ function openProjectModal(projectId) {
   const title = document.getElementById("modal-title");
   const category = document.getElementById("modal-category");
   const desc = document.getElementById("modal-desc");
+  const caseStudyContainer = document.getElementById("modal-casestudy-section");
   const featureList = document.getElementById("modal-features");
   const tagsContainer = document.getElementById("modal-tags");
 
@@ -706,6 +801,47 @@ function openProjectModal(projectId) {
   if (title) title.textContent = project.title[currentLang];
   if (category) category.textContent = project.categoryLabel[currentLang];
   if (desc) desc.textContent = project.desc[currentLang];
+
+  if (caseStudyContainer) {
+    if (project.caseStudy) {
+      const cs = project.caseStudy[currentLang] || project.caseStudy.id;
+      caseStudyContainer.innerHTML = `
+        <h4 class="modal-section-title" style="margin-top: 1.25rem;">${dict.caseStudyTitle || (currentLang === "en" ? "Engineering Case Study:" : "Studi Kasus Rekayasa:")}</h4>
+        <div class="modal-casestudy-grid">
+          <div class="case-card problem">
+            <div class="case-card-header">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>${dict.caseProblem || (currentLang === "en" ? "Problem & Challenge" : "Problem / Tantangan")}</span>
+            </div>
+            <div class="case-card-body">${cs.problem}</div>
+          </div>
+          <div class="case-card solution">
+            <div class="case-card-header">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+              <span>${dict.caseSolution || (currentLang === "en" ? "Engineering Solution" : "Solusi Rekayasa")}</span>
+            </div>
+            <div class="case-card-body">${cs.solution}</div>
+          </div>
+          <div class="case-card architecture">
+            <div class="case-card-header">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              <span>${dict.caseArchitecture || (currentLang === "en" ? "Architecture & Protocols" : "Arsitektur & Protokol")}</span>
+            </div>
+            <div class="case-card-body">${cs.architecture}</div>
+          </div>
+          <div class="case-card result">
+            <div class="case-card-header">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>${dict.caseResult || (currentLang === "en" ? "Result & Impact" : "Hasil & Dampak")}</span>
+            </div>
+            <div class="case-card-body">${cs.result}</div>
+          </div>
+        </div>
+      `;
+    } else {
+      caseStudyContainer.innerHTML = "";
+    }
+  }
 
   if (featureList) {
     featureList.innerHTML = project.features[currentLang].map(f => `
