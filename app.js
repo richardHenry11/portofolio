@@ -640,24 +640,54 @@ function applyTheme(theme) {
   }
 }
 
-// --- Language Management ---
+// --- Language Management (Elastic Sliding Switch) ---
 function initLanguage() {
+  const langSwitch = document.getElementById("lang-switch");
   const langBtns = document.querySelectorAll(".lang-btn");
+
   langBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
       const selected = btn.getAttribute("data-lang");
       if (selected && selected !== currentLang) {
-        currentLang = selected;
-        localStorage.setItem("portfolio_lang", currentLang);
-        updateLanguageUI();
+        changeLanguage(selected);
       }
     });
   });
+
+  // Enable direct click on the switch track to toggle
+  if (langSwitch) {
+    langSwitch.addEventListener("click", () => {
+      const nextLang = currentLang === "id" ? "en" : "id";
+      changeLanguage(nextLang);
+    });
+  }
+
+  updateLanguageUI();
+}
+
+function changeLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem("portfolio_lang", currentLang);
+
+  const langSwitch = document.getElementById("lang-switch");
+  if (langSwitch) {
+    langSwitch.classList.add("switching");
+    setTimeout(() => {
+      langSwitch.classList.remove("switching");
+    }, 380);
+  }
 
   updateLanguageUI();
 }
 
 function updateLanguageUI() {
+  // Update sliding switch active position state
+  const langSwitch = document.getElementById("lang-switch");
+  if (langSwitch) {
+    langSwitch.setAttribute("data-active", currentLang);
+  }
+
   // Update toggle buttons active class
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.classList.toggle("active", btn.getAttribute("data-lang") === currentLang);
